@@ -1,107 +1,144 @@
-import React, { useState } from 'react'
-import styled from './ContactForm.module.css'
- import emailjs from 'emailjs-com'
-//import * as emailjs from "@emailjs/browser";
-import Modal from 'react-modal'
-let obj={
-  "user_name":"",
-  "contact_number":"",
-  "user_email":"",
-  "message":"",
-}
+
+import React, { useRef,useState } from "react";
+import emailjs from "@emailjs/browser";
+import styled from "styled-components";
+
+
 
 const ContactForm = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [data,setData]=useState(obj)
-  const handleChange = (e)=>
-  { console.log(e.target)
-    let {name,value}=e.target
-    let payload={
-      ...data,
-      [name]:value,
-    }
-    setData(payload);
-  }
+
+  const [isOpen, setIsOpen] = useState(false);
+
+
+  const form = useRef();
+
   const handleClick = () => {
-    setIsOpen(true)
-  }
-  const handleSubmit = (e) => {
-    console.log(e.target)
-    e.preventDefault()
+         setIsOpen(true)
+       }
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
     emailjs
       .sendForm(
-        'service_1j8ve7f',
-        'template_xjo3pou',
-        e.target,
-          // 'user_9LffP4jCfFdSRK43r6Mcn',
-          'HSLLr-8duUMwxfUwH'
-        
+        "service_1j8ve7f",
+        "template_ju13yny",
+        form.current,
+        "HSLLr-8duUMwxfUwH"
       )
       .then(
         (result) => {
-          console.log(result.text)
+          console.log(result.text);
+          console.log("message sent");
+          e.target.reset();
+         
         },
         (error) => {
-          console.log(error.text)
-        },
-      )
-    e.target.reset()
-  }
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
-    <div className="projects_container" data-aos="fade-right">
-    <form onSubmit={handleSubmit} id="contact">
-      <h2 className={styled.h2}>Contact Form</h2>
-      <div className={styled.top}>
-        <input
-           onChange={handleChange}
-          className={styled.color}
-          name="user_name"
-          placeholder="Full Name"
-          type="text"
-          required
+    <StyledContactForm>
+        <div  data-aos="fade-right"><h2 style={{color:"#0f87e3",textAlign:"center",marginTop:"10%"}}>Contact Form</h2>
+      <form ref={form} onSubmit={sendEmail}  data-aos="fade-right">
+        <label>Your name</label>
+        <input type="text" name="user_name" />
+        <label>Your email</label>
+        <input type="email" name="user_email" />
+        <label>Message</label>
+        <textarea name="message" />
+       {isOpen ? (
+         <input  type="submit" onClick={handleClick} value="Sent" />
+         ):(
+          <input  type="submit" onClick={handleClick} value="Send" />
+       )
+       }
+      </form>
+      </div>
+    </StyledContactForm>
+  );
+};
 
-        />
-        <input
-           onChange={handleChange}
-          className={styled.color1}
-          name="contact_number"
-          placeholder="Mobile Number"
-          type="text"
-          required
-        />
-      </div>
-      <div>
-        <input
-           onChange={handleChange}
-          className={styled.color2}
-          name="user_email"
-          placeholder="Email Id"
-          type="email"
-          required
-        />
-      </div>
-      <div>
-        <input
-           onChange={handleChange}
-          className={styled.color2}
-          name="message"
-          placeholder="Subject of the message"
-          type="text"
-          required
-        />
-      </div>
-      <button type="submit"  onClick={handleClick} className={styled.btn}>
-        Send Message
-      </button>
-      <Modal className={styled.background} isOpen={isOpen}>
-        <h2 className={styled.h1}>Congratulation You Successfully send mail</h2>
-        <button  onClick={() => setIsOpen(false)} className={styled.btn}>
-          Close
-        </button>
-      </Modal>
-    </form>
-    </div>
-  )
-}
+export default ContactForm;
 
-export default ContactForm
+
+const StyledContactForm = styled.div`
+  
+  width: 40%;
+  margin: 0 auto;
+  background-color: transparent;
+
+  form {
+    margin:auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    input {
+      border: 2px solid var(--clr-primary);
+    
+      width: 100%;
+      height: 35px;
+      padding: 7px;
+      outline: none;
+      border-radius: 5px;
+      
+    }
+   
+    textarea {
+      border: 2px solid var(--clr-primary);
+      max-width: 100%;
+      min-width: 100%;
+      width: 100%;
+      max-height: 100px;
+      min-height: 100px;
+      padding: 7px;
+      outline: none;
+      border-radius: 5px;
+     
+    }
+    label {
+      margin-top: 1rem;
+    }
+    input[type="submit"] {
+
+      margin-left: 23%;
+   
+    height:60px;
+    width:220px;
+  
+   
+    border-radius: 10px;
+   
+    font-size: 18px;
+    margin-top:3%;
+   
+    border: 2px solid var(--clr-primary);
+    display: flex;
+    justify-content: center;
+    padding-top:1.75%;
+     
+      &:hover{
+    color: var(--clr-bg);
+    border: 2px solid var(--clr-primary);
+    background-color: var(--clr-primary);
+  }
+    }
+    button {
+      
+    margin-left: 40%;
+    height:20px;
+    width:50px;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top:3%;
+    border: 2px solid var(--clr-primary);
+    display: flex;
+    justify-content: center;
+    padding-top:1.75%;
+    }
+  }
+`;
