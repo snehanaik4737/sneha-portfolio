@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from './ContactForm.module.css'
-import emailjs from 'emailjs-com'
+// import emailjs from 'emailjs-com'
+import * as emailjs from "@emailjs/browser";
 import Modal from 'react-modal'
 let obj={
   "user_name":"",
@@ -8,6 +9,7 @@ let obj={
   "user_email":"",
   "message":"",
 }
+
 const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [data,setData]=useState(obj)
@@ -24,14 +26,16 @@ const ContactForm = () => {
     setIsOpen(true)
   }
   const handleSubmit = (e) => {
+    console.log(e.target)
     e.preventDefault()
     emailjs
       .sendForm(
-        'service_f3322fh',
-        'template_livi7up',
+        'service_1j8ve7f',
+        'template_xjo3pou',
         e.target,
-        //  'user_9LffP4jCfFdSRK43r6Mcn',
-        "snehanaik856@gmail.com"
+          // 'user_9LffP4jCfFdSRK43r6Mcn',
+          'HSLLr-8duUMwxfUwH'
+        
       )
       .then(
         (result) => {
