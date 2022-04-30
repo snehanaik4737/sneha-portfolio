@@ -14,7 +14,7 @@ import { DiCss3, DiMongodb } from "react-icons/di";
 import { SiJavascript, SiHeroku } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 import { BsBootstrap, BsWordpress } from "react-icons/bs";
-
+import { Link } from "react-router-dom";
 export const Techstacks = () => {
   return (
     <>

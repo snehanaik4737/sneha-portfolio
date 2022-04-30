@@ -89,8 +89,8 @@ const ContactForm = () => {
         Send Message
       </button>
       <Modal className={styled.background} isOpen={isOpen}>
-        <h1 className={styled.h1}>Congratulation You Successfully send mail</h1>
-        <button onClick={() => setIsOpen(false)} className={styled.btn}>
+        <h2 className={styled.h1}>Congratulation You Successfully send mail</h2>
+        <button  onClick={() => setIsOpen(false)} className={styled.btn}>
           Close
         </button>
       </Modal>
