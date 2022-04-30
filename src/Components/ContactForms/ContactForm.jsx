@@ -30,7 +30,8 @@ const ContactForm = () => {
         'service_f3322fh',
         'template_livi7up',
         e.target,
-        'user_9LffP4jCfFdSRK43r6Mcn',
+        //  'user_9LffP4jCfFdSRK43r6Mcn',
+        "snehanaik856@gmail.com"
       )
       .then(
         (result) => {
