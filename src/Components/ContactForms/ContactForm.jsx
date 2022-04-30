@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from './ContactForm.module.css'
-// import emailjs from 'emailjs-com'
-import * as emailjs from "@emailjs/browser";
+ import emailjs from 'emailjs-com'
+//import * as emailjs from "@emailjs/browser";
 import Modal from 'react-modal'
 let obj={
   "user_name":"",
@@ -14,13 +14,13 @@ const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [data,setData]=useState(obj)
   const handleChange = (e)=>
-  {
+  { console.log(e.target)
     let {name,value}=e.target
     let payload={
       ...data,
       [name]:value,
     }
-    setData(payload)
+    setData(payload);
   }
   const handleClick = () => {
     setIsOpen(true)
