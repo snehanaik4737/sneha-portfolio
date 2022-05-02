@@ -2,9 +2,8 @@
 import React, { useRef,useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-
-
-
+import Modal from 'react-modal'
+import "./ContactForm.css"
 const ContactForm = () => {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -49,12 +48,16 @@ const ContactForm = () => {
         <input type="email" name="user_email" />
         <label>Message</label>
         <textarea name="message" />
-       {isOpen ? (
-         <input  type="submit" onClick={handleClick} value="Sent" />
-         ):(
-          <input  type="submit" onClick={handleClick} value="Send" />
-       )
-       }
+      
+        <input  type="submit" onClick={handleClick} value="Send" />
+         <Modal className="background" isOpen={isOpen}>
+        <h2 className="congrats">Congratulations! The mail has been sent successfully.</h2>
+        <button onClick={() => setIsOpen(false)} className="btn">
+          Close
+        </button>
+      </Modal>
+      
+      
       </form>
       </div>
     </StyledContactForm>
@@ -127,18 +130,10 @@ const StyledContactForm = styled.div`
     background-color: var(--clr-primary);
   }
     }
-    button {
-      
-    margin-left: 40%;
-    height:20px;
-    width:50px;
-    border-radius: 10px;
-    font-size: 18px;
-    margin-top:3%;
-    border: 2px solid var(--clr-primary);
-    display: flex;
-    justify-content: center;
-    padding-top:1.75%;
-    }
+   
+
+   
+
   }
+
 `;
