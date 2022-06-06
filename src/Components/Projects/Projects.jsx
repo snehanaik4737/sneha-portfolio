@@ -18,12 +18,68 @@ import {
 import { DiCss3 } from "react-icons/di";
 import { VscJson } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io";
+//import TimerImage from "../../assets/TimerImage.PNG"
+//import   from "../../assets/Photo_Sneha.jpg";
 export const Projects = () => {
   return (
     <>
       <div className="section">
         <h2 className="section__title different">Projects</h2>
         <div className="allProjects">
+
+        <div className="projects_container" data-aos="fade-right">
+            <div className="project">
+              <div className="project_videocontainer">
+                <div>
+                  <img
+                    src="https://miro.medium.com/max/1400/1*G43bgjBTH3Bgiks0f0-PHg.png"
+                    alt="Gearbest"
+                  />
+                </div>
+              </div>
+              <div className="project_information">
+                <h2>Gearbest</h2>
+                <p>
+                 Gearbest is a product-based e-commerce website selling cell phones,electronic gadgets and home
+                    products.
+
+                </p>
+                <div>
+                  <FaReact />
+                  <SiMaterialui />
+                  <SiNodedotjs />
+                  <SiExpress />
+                  <SiMongodb />
+                  <DiCss3 />
+                  {/* <SiHtml5 /> */}
+                </div>
+                <div>
+                  <a
+                    href="gearbestclonemasai.netlify.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span type="button" className="btns onbt onbt">
+                      See this Live
+                    </span>
+                  </a>
+                  <a
+                    href="https://github.com/rupamShaw1998/GearBest"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span type="button" className="btns onbt">
+                      View Code
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+
+
           <div className="projects_container" data-aos="fade-right">
             <div className="project">
               <div className="project_videocontainer">
@@ -72,12 +128,13 @@ export const Projects = () => {
               </div>
             </div>
           </div>
+
           <div className="projects_container" data-aos="fade-right">
             <div className="project">
               <div className="project_videocontainer">
                 <div>
                   <img
-                    src="https://miro.medium.com/max/1400/1*bP_itIcjM_EBTzM5pL5z5A.png"
+                    src="https://miro.medium.com/max/1400/1*qZ9TO188H4vbL87PuDCQOg.png"
                     alt="Myntra"
                   />
                 </div>
@@ -119,6 +176,63 @@ export const Projects = () => {
               </div>
             </div>
           </div>
+
+
+          <div className="projects_container" data-aos="fade-right">
+            <div className="project">
+              <div className="project_videocontainer">
+                <div>
+                  <img
+                    src="https://miro.medium.com/max/1400/1*jMR8PtBM6_tM1Jnm9hVWJA.png"
+                    alt="Timer"
+                  />
+                </div>
+              </div>
+              <div className="project_information">
+                <h2>Timer</h2>
+                <p>
+                
+                Stopwatch simulator.
+                 {/* A timer that counts from zero upwards for measuring time elapsed. */}
+                The Start button starts the timer running, and the Stop button stops it, leaving the elapsed time displayed.The Reset button then resets the stopwatch to zero.
+                </p>
+                <div>
+                  <FaReact />
+                  {/* <SiMaterialui />
+                  <SiNodedotjs />
+                  <SiExpress />
+                  <SiMongodb /> */}
+                  <DiCss3 />
+                  {/* <SiHtml5 /> */}
+                </div>
+                <div>
+                  <a
+                    href="https://stop-watch-simulator.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span type="button" className="btns onbt onbt">
+                      See this Live
+                    </span>
+                  </a>
+                  <a
+                    href="https://github.com/snehanaik4737/unit-5-Assignment/tree/main/timer"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span type="button" className="btns onbt">
+                      View Code
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+
+
+
           <div className="projects_container" data-aos="fade-right">
             <div className="project">
               <div className="project_videocontainer">
