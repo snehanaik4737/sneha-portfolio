@@ -11,7 +11,9 @@
 .nav__theme {
   margin-top: 0.4em;
 }
-
+/* .center nav{
+  border:1px solid black
+} */
 @media (max-width: 600px) {
   .nav__list {
     display: none;
