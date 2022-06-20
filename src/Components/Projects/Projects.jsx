@@ -32,6 +32,55 @@ export const Projects = () => {
               <div className="project_videocontainer">
                 <div>
                   <img
+                    src="https://miro.medium.com/max/1400/1*P-VUfuP1_U5oLkqdN3vW9w.png"
+                    alt="Naukri"
+                  />
+                </div>
+              </div>
+              <div className="project_information">
+                <h2>Naukri</h2>
+                <p>
+                Naukri.com is an Indian employment website provides hiring-related services  in India and overseas.
+                </p>
+                <div>
+                  <FaReact />
+                  <SiMaterialui />
+                  <SiNodedotjs />
+                  <SiExpress />
+                  <SiMongodb />
+                  <DiCss3 />
+                  {/* <SiHtml5 /> */}
+                </div>
+                <div>
+                  <a
+                    href="https://naukri-website-clone.netlify.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span type="button" className="btns onbt onbt">
+                      See this Live
+                    </span>
+                  </a>
+                  <a
+                    href="https://github.com/snehanaik4737/naukri-website-clone"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span type="button" className="btns onbt">
+                      View Code
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        <div className="projects_container" data-aos="fade-right">
+            <div className="project">
+              <div className="project_videocontainer">
+                <div>
+                  <img
                     src="https://miro.medium.com/max/1400/1*G43bgjBTH3Bgiks0f0-PHg.png"
                     alt="Gearbest"
                   />
@@ -178,7 +227,7 @@ export const Projects = () => {
           </div>
 
 
-          <div className="projects_container" data-aos="fade-right">
+          {/* <div className="projects_container" data-aos="fade-right">
             <div className="project">
               <div className="project_videocontainer">
                 <div>
@@ -193,17 +242,14 @@ export const Projects = () => {
                 <p>
                 
                 Stopwatch simulator.
-                 {/* A timer that counts from zero upwards for measuring time elapsed. */}
+             
                 The Start button starts the timer running, and the Stop button stops it, leaving the elapsed time displayed.The Reset button then resets the stopwatch to zero.
                 </p>
                 <div>
                   <FaReact />
-                  {/* <SiMaterialui />
-                  <SiNodedotjs />
-                  <SiExpress />
-                  <SiMongodb /> */}
+                
                   <DiCss3 />
-                  {/* <SiHtml5 /> */}
+                
                 </div>
                 <div>
                   <a
@@ -227,7 +273,7 @@ export const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
          
 
